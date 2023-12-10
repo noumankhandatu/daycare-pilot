@@ -100,7 +100,7 @@ export const containerStyle = {
 };
 
 export const maindiv = {
-  width: "330px",
+  width: "350px",
   p: 3,
   borderRadius: "10px",
   filter: "drop-shadow(0px 10px 40px rgba(0, 64, 128, 0.1))",

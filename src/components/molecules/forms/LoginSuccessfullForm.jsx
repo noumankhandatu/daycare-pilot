@@ -23,7 +23,7 @@ const LoginSuccessfullForm = () => {
           You have successfully change password. Please use the new password when logging in.
         </AppLabel>
 
-        <Link to={ROUTE_PATH.LOGIN}>
+        <Link to={ROUTE_PATH.KID_INFORMATION}>
           <AppButton
             variant="contained"
             fullWidth

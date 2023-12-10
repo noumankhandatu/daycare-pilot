@@ -2,7 +2,7 @@ import { styled } from "@mui/system";
 import { TextField } from "@mui/material";
 
 const AppInput = styled(TextField)({
-  width: "287px",
+  width: "100%",
   borderRadius: "10px",
   backgroundColor: "#F0F0F0",
   fontFamily: "Plus Jakarta Sans",
