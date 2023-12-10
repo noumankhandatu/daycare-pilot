@@ -1,0 +1,6 @@
+export const ROUTE_PATH = {
+  LOGIN: "/login",
+  FORGET_PASSWORD: "/forget-password",
+  RECOVERY_PASSWORD: "/recovery-password",
+  LOGIN_SUCCESSFULL: "/login-successfull",
+};

@@ -9,10 +9,8 @@ const AppInput = styled(TextField)({
   fontWeight: 600,
   fontSize: "15.91px",
   lineHeight: "26.87px",
-  border: "none !important", // Remove the border
   "&:focus": {
     outline: "none",
-    border: "none !important",
     boxShadow: `0 0 0 2px transparent !important`,
   },
   "& .MuiOutlinedInput-notchedOutline": {

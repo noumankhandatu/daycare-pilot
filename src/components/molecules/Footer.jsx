@@ -3,11 +3,11 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import logo from "../../assets/images/logo.png";
-import { footerItems } from "../../data";
 import AppIcons from "../atoms/Icon";
-import { Appfont } from "../../Apptheme";
-import { primary, secondary } from "../../Apptheme/colors";
+import { Appheading } from "../../app-theme";
 import AppImage from "../atoms/Image";
+import { primary, secondary } from "../../app-theme/colors";
+import { footerItems } from "../../utils/static-data";
 
 const Footer = () => {
   return (
@@ -49,7 +49,7 @@ const Footer = () => {
           }}
         >
           {footerItems?.map((items, id) => (
-            <Appfont
+            <Appheading
               sx={{
                 ml: { xs: 0, md: 5 },
                 mt: { xs: 2, md: 0 },
@@ -60,7 +60,7 @@ const Footer = () => {
               key={id}
             >
               {items}
-            </Appfont>
+            </Appheading>
           ))}
         </Box>
         <Box sx={{ display: "flex", alignItems: "center" }}>

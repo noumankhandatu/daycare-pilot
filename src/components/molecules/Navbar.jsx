@@ -12,15 +12,15 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import logo from "../../assets/images/logo.png";
 import { Box } from "@mui/system";
-import { navItems } from "../../data";
 import AppIcons from "../atoms/Icon";
-import { Appfont } from "../../Apptheme/index";
-import { primary } from "../../Apptheme/colors";
 import AppImage from "../atoms/Image";
 import MenuIcon from "@mui/icons-material/Menu";
 import Drawer from "@mui/material/Drawer";
 import { useState } from "react";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import { Appheading } from "../../app-theme";
+import { navItems } from "../../utils/static-data";
+import { primary } from "../../app-theme/colors";
 const Navbar = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
@@ -75,9 +75,9 @@ const Navbar = () => {
             <Box sx={{ display: "flex", width: "310px" }}>
               {navItems?.map((items, id) => {
                 return (
-                  <Appfont sx={{ ml: 2, cursor: "pointer" }} key={id}>
+                  <Appheading sx={{ ml: 2, cursor: "pointer" }} key={id}>
                     {items}
-                  </Appfont>
+                  </Appheading>
                 );
               })}
             </Box>

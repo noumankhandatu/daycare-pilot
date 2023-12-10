@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { Box, Container, IconButton, InputAdornment } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
-import { AppButton } from "../atoms/Buttons";
+import { AppButton } from "../../atoms/Buttons";
 import GoogleIcon from "@mui/icons-material/Google";
 import AppleIcon from "@mui/icons-material/Apple";
-import AppInput from "../atoms/Input";
-import { AppLabel } from "../../Apptheme";
-import { primary } from "../../Apptheme/colors";
+import AppInput from "../../atoms/Input";
+import { primary } from "../../../app-theme/colors";
+import { AppLabel } from "../../../app-theme";
+import { Link } from "react-router-dom";
+import { ROUTE_PATH } from "../../../utils/enums";
 
 const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -44,9 +46,11 @@ const LoginForm = () => {
         >
           Log in
         </AppButton>
-        <AppLabel sx={{ color: primary, mt: 2, mb: 2, textAlign: "center", fontWeight: "bold" }}>
-          Forget Password ?
-        </AppLabel>
+        <Link to={ROUTE_PATH.FORGET_PASSWORD}>
+          <AppLabel sx={{ color: primary, mt: 2, mb: 2, textAlign: "center", fontWeight: "bold" }}>
+            Forget Password ?
+          </AppLabel>
+        </Link>
       </Box>
       <Box
         sx={{
@@ -86,7 +90,7 @@ const LoginForm = () => {
 
 export default LoginForm;
 
-const containerStyle = {
+export const containerStyle = {
   height: "417px",
   display: "flex",
   flexDirection: "column",
@@ -95,14 +99,14 @@ const containerStyle = {
   bottom: "200px",
 };
 
-const maindiv = {
+export const maindiv = {
   width: "330px",
   p: 3,
-  border: "1px solid #ccc",
   borderRadius: "10px",
-  boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+  filter: "drop-shadow(0px 10px 40px rgba(0, 64, 128, 0.1))",
   background: "white",
 };
+
 const btnStyle = {
   marginTop: 1,
   height: "40px",
