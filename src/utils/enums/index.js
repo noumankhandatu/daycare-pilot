@@ -1,3 +1,4 @@
+// web paths
 export const ROUTE_PATH = {
   LOGIN: "/login",
   FORGET_PASSWORD: "/forget-password",
@@ -6,3 +7,5 @@ export const ROUTE_PATH = {
   KID_INFORMATION: "/kid-information",
   GUARDIAN_INFORMATION: "/guardian-information",
 };
+
+// dashboard paths for parent
