@@ -24,14 +24,15 @@ import VolumeUpIcon from "@mui/icons-material/VolumeUp";
 import ReportIcon from "@mui/icons-material/Report";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { listArray, listObj } from "./type";
-import { AppMainheading, Appcaption, Appheading } from "../../app-theme";
+import { AppMainheading, Appcaption } from "../../app-theme";
 import AppInput from "./../../components/atoms/Input";
 import SearchIcon from "@mui/icons-material/Search";
-import { Avatar, Badge, InputAdornment } from "@mui/material";
+import { Badge, InputAdornment } from "@mui/material";
 import { Stack } from "@mui/system";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import HomeTab from "./tabs/HomeTab";
 import CalenderTab from "./tabs/CalenderTab";
+import ProfileMenu from "../../components/molecules/menu";
 const drawerWidth = 200;
 
 const openedMixin = (theme) => ({
@@ -52,9 +53,9 @@ const closedMixin = (theme) => ({
     duration: theme.transitions.duration.leavingScreen,
   }),
   overflowX: "hidden",
-  width: `calc(${theme.spacing(7)} + 1px)`,
+  width: `calc(${theme.spacing(9)} + 1px)`,
   [theme.breakpoints.up("sm")]: {
-    width: `calc(${theme.spacing(8)} + 1px)`,
+    width: `calc(${theme.spacing(9)} + 1px)`,
   },
 });
 
@@ -176,13 +177,28 @@ export default function ParentDashboard() {
           >
             <MenuIcon />
           </IconButton>
-          <Box sx={{ display: "flex", flexDirection: "column" }}>
+          <Box
+            sx={{
+              flexDirection: "column",
+              display: {
+                lg: "flex",
+                xs: "none",
+              },
+            }}
+          >
             <AppMainheading sx={{ color: "black" }}>Hi Cody Fisher</AppMainheading>
             <Appcaption>Good Morning</Appcaption>
           </Box>
           <Box>
             <AppInput
-              sx={{ width: 644, borderRadius: 3 }}
+              sx={{
+                width: {
+                  lg: 544,
+                  md: "100%",
+                  xs: "100%",
+                },
+                borderRadius: 3,
+              }}
               placeholder="Search"
               InputProps={{
                 startAdornment: (
@@ -193,7 +209,16 @@ export default function ParentDashboard() {
               }}
             />
           </Box>
-          <Stack spacing={2} direction="row">
+          <Stack
+            sx={{
+              display: {
+                lg: "block",
+                xs: "none",
+              },
+            }}
+            spacing={2}
+            direction="row"
+          >
             <Badge badgeContent={4} color="warning">
               <EmailIcon color="action" />
             </Badge>
@@ -201,17 +226,7 @@ export default function ParentDashboard() {
               <NotificationsNoneIcon color="action" />
             </Badge>
           </Stack>
-
-          <Box sx={{ display: "flex", alignItems: "center" }}>
-            <Avatar
-              src={"https://mui.com/static/images/avatar/1.jpg"}
-              sx={{ width: 56, height: 56 }}
-            />
-            <Box sx={{ ml: 1 }}>
-              <Appheading sx={{ color: "black" }}>Hi Cody Fisher</Appheading>
-              <Appcaption>Good Morning</Appcaption>
-            </Box>
-          </Box>
+          <ProfileMenu />
         </Toolbar>
       </AppBar>
       <Drawer variant="permanent" open={open}>
@@ -224,7 +239,7 @@ export default function ParentDashboard() {
               src={logo}
               alt="Logo"
               sx={{
-                width: "150px",
+                width: open ? "150px" : "70px",
               }}
             />
           )}

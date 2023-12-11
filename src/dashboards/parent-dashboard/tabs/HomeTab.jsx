@@ -16,7 +16,7 @@ const HomeTab = () => {
   ];
   return (
     <Grid container spacing={2}>
-      <Grid xs={7}>
+      <Grid xs={12} md={7}>
         {userList?.map((user, index) => (
           <Card
             key={index}
@@ -59,7 +59,7 @@ const HomeTab = () => {
           </Card>
         ))}
       </Grid>
-      <Grid xs={5}>
+      <Grid xs={12} md={5}>
         <Card sx={cardCss}>
           <Box sx={{ display: "flex", alignItems: "center", flexDirection: "column" }}>
             <Avatar

@@ -1,6 +1,4 @@
 import Login from "../pages/Login";
-import Navbar from "./../components/molecules/Navbar";
-import Footer from "./../components/molecules/Footer";
 import ForgetPassword from "../pages/ForgetPassword";
 import RecoveryPassword from "../pages/RecoveryPassword";
 import LoginSuccessfull from "./../pages/LoginSuccessfull";
@@ -8,22 +6,73 @@ import KidInformation from "../pages/KidInformation";
 import GuardianInformation from "../pages/GuardianInfo";
 import { ROUTE_PATH } from "../utils/enums";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ParentDashboard from "../dashboards/parent-dashboard";
+import AppLayout from "../wrapper/AppLayout";
 
 const PublicRoutes = () => {
   return (
     <Router>
-      <Navbar />
       <Routes>
         {["/", ROUTE_PATH.LOGIN].map((path, key) => (
-          <Route key={key} exact path={path} element={<Login />} />
+          <Route
+            key={key}
+            exact
+            path={path}
+            element={
+              <AppLayout>
+                <Login />
+              </AppLayout>
+            }
+          />
         ))}
-        <Route exact path={ROUTE_PATH.FORGET_PASSWORD} element={<ForgetPassword />} />
-        <Route exact path={ROUTE_PATH.RECOVERY_PASSWORD} element={<RecoveryPassword />} />
-        <Route exact path={ROUTE_PATH.LOGIN_SUCCESSFULL} element={<LoginSuccessfull />} />
-        <Route exact path={ROUTE_PATH.KID_INFORMATION} element={<KidInformation />} />
-        <Route exact path={ROUTE_PATH.GUARDIAN_INFORMATION} element={<GuardianInformation />} />
+        <Route
+          exact
+          path={ROUTE_PATH.FORGET_PASSWORD}
+          element={
+            <AppLayout>
+              <ForgetPassword />
+            </AppLayout>
+          }
+        />
+        <Route
+          exact
+          path={ROUTE_PATH.RECOVERY_PASSWORD}
+          element={
+            <AppLayout>
+              <RecoveryPassword />
+            </AppLayout>
+          }
+        />
+        <Route
+          exact
+          path={ROUTE_PATH.LOGIN_SUCCESSFULL}
+          element={
+            <AppLayout>
+              <LoginSuccessfull />
+            </AppLayout>
+          }
+        />
+        <Route
+          exact
+          path={ROUTE_PATH.KID_INFORMATION}
+          element={
+            <AppLayout>
+              <KidInformation />
+            </AppLayout>
+          }
+        />
+        <Route
+          exact
+          path={ROUTE_PATH.GUARDIAN_INFORMATION}
+          element={
+            <AppLayout>
+              <GuardianInformation />
+            </AppLayout>
+          }
+        />
+        <Route exact path={ROUTE_PATH.PARENT_DASHBOARD} element={<ParentDashboard />} />
+        <Route exact path={"*"} element={`No route found`} />
       </Routes>
-      <Footer />
     </Router>
   );
 };

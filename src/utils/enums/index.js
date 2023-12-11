@@ -6,6 +6,8 @@ export const ROUTE_PATH = {
   LOGIN_SUCCESSFULL: "/login-successfull",
   KID_INFORMATION: "/kid-information",
   GUARDIAN_INFORMATION: "/guardian-information",
+  PARENT_DASHBOARD: "/parent-dashboard",
+
 };
 
 // dashboard paths for parent
