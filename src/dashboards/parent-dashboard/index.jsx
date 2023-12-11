@@ -32,7 +32,6 @@ import { Stack } from "@mui/system";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import HomeTab from "./tabs/HomeTab";
 import CalenderTab from "./tabs/CalenderTab";
-
 const drawerWidth = 200;
 
 const openedMixin = (theme) => ({
@@ -141,7 +140,7 @@ export default function ParentDashboard() {
         return <Typography>Content for MESSAGE</Typography>;
       case listObj.ALERTS:
         return <Typography>Content for ALERTS</Typography>;
-      case listObj.ANNOUNCEMENT:
+      case listObj.ANNOUNCMENT:
         return <Typography>Content for ANNOUNCEMENT</Typography>;
       case listObj.REPORT:
         return <Typography>Content for REPORT</Typography>;

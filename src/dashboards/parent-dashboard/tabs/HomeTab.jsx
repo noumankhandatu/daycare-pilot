@@ -1,10 +1,11 @@
 import { Avatar, Card, CardMedia, IconButton } from "@mui/material";
 import { Box } from "@mui/system";
 import ShareIcon from "@mui/icons-material/Share";
-import FavoriteIcon from "@mui/icons-material/Favorite";
 import kidImg from "../../../assets/images/kid.png";
 import { Appfont } from "../../../app-theme";
 import { Appcaption } from "./../../../app-theme/index";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+
 const HomeTab = () => {
   const userList = [{ imageUrl: kidImg, name: "nouman" }];
   return (
@@ -41,7 +42,7 @@ const HomeTab = () => {
           <CardMedia component="img" height="140" image={user.imageUrl} alt={user.name} />
           <Box sx={{ display: "flex", alignItems: "center" }}>
             <IconButton>
-              <FavoriteIcon /> 118
+              <FavoriteBorderIcon /> 118
             </IconButton>
             <IconButton sx={{ marginLeft: "auto" }}>
               <ShareIcon />
