@@ -34,6 +34,7 @@ import HomeTab from "./tabs/HomeTab";
 import CalenderTab from "./tabs/CalenderTab";
 import ProfileMenu from "../../components/molecules/menu";
 import AppDiv from "../../components/atoms/appDiv";
+import MessageTab from "./tabs/MessageTab";
 const drawerWidth = 200;
 
 const openedMixin = (theme) => ({
@@ -139,7 +140,7 @@ export default function ParentDashboard() {
       case listObj.CALENDAR:
         return <CalenderTab />;
       case listObj.MESSAGE:
-        return <Typography>Content for MESSAGE</Typography>;
+        return <MessageTab />;
       case listObj.ALERTS:
         return <Typography>Content for ALERTS</Typography>;
       case listObj.ANNOUNCMENT:

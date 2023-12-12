@@ -37,9 +37,6 @@ const CalenderTab = () => {
             </FormGroup>
 
             <EventsCard />
-            <EventsCard />
-            <EventsCard />
-            <EventsCard />
           </AppPaper>
         </Grid>
         <Grid xs={4}>
