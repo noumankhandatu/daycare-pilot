@@ -191,36 +191,25 @@ export default function ParentDashboard() {
             <AppMainheading sx={{ color: "black" }}>Hi Cody Fisher</AppMainheading>
             <Appcaption>Good Morning</Appcaption>
           </AppDiv>
-          <AppDiv>
-            <AppInput
-              sx={{
-                width: {
-                  lg: 544,
-                  md: "100%",
-                  xs: "100%",
-                },
-                borderRadius: 3,
-              }}
-              placeholder="Search"
-              InputProps={{
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <SearchIcon />
-                  </InputAdornment>
-                ),
-              }}
-            />
-          </AppDiv>
-          <Stack
+          <AppInput
             sx={{
-              display: {
-                lg: "block",
-                xs: "none",
+              width: {
+                lg: 500,
+                xs: "100%",
+                height: 50,
               },
+              borderRadius: 3,
             }}
-            spacing={2}
-            direction="row"
-          >
+            placeholder="Search"
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <SearchIcon />
+                </InputAdornment>
+              ),
+            }}
+          />
+          <Stack spacing={2} direction="row" sx={{ ml: 1, mr: 1 }}>
             <Badge badgeContent={4} color="warning">
               <EmailIcon color="action" />
             </Badge>
@@ -302,7 +291,23 @@ export default function ParentDashboard() {
           })}
         </List>
       </Drawer>
-      <AppDiv component="main" sx={{ flexGrow: 1, p: 6, backgroundColor: "#F9F9F9" }}>
+      <AppDiv
+        sx={{
+          flexGrow: 1,
+          backgroundColor: "#F9F9F9",
+          pt: 6,
+          pl: {
+            lg: 2,
+            xs: 1,
+          },
+          pr: {
+            lg: 2,
+            xs: 1,
+          },
+          pb: 6,
+          width: "10%",
+        }}
+      >
         <DrawerHeader />
         {renderContent()}
       </AppDiv>

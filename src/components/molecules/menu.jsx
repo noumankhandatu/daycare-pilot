@@ -20,15 +20,24 @@ export default function ProfileMenu() {
       <AppDiv
         onClick={handleClick}
         sx={{
-          display: {
-            lg: "flex",
-            xs: "none",
-          },
           alignItems: "center",
+          display: {
+            md: "flex",
+          },
+          ml: 1,
         }}
       >
         <Avatar src={"https://mui.com/static/images/avatar/1.jpg"} sx={{ width: 56, height: 56 }} />
-        <AppDiv sx={{ ml: 1 }}>
+        <AppDiv
+          sx={{
+            ml: 1,
+            display: {
+              lg: "block",
+              xs: "none",
+            },
+            flexDirection: "column",
+          }}
+        >
           <Appheading sx={{ color: "black" }}>Hi Cody Fisher</Appheading>
           <Appcaption>Good Morning</Appcaption>
         </AppDiv>
@@ -42,8 +51,7 @@ export default function ProfileMenu() {
           "aria-labelledby": "basic-button",
         }}
       >
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>My account</MenuItem>
+        <MenuItem onClick={handleClose}>Cody Fisher</MenuItem>
         <MenuItem onClick={handleClose}>Logout</MenuItem>
       </Menu>
     </div>

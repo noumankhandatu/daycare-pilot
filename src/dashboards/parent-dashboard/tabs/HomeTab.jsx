@@ -16,7 +16,7 @@ const HomeTab = () => {
     { imageUrl: kidImg, name: "nouman" },
   ];
   return (
-    <Grid container spacing={2}>
+    <Grid container>
       <Grid xs={12} md={7}>
         {userList?.map((user, index) => (
           <Card
@@ -26,7 +26,10 @@ const HomeTab = () => {
               p: 2,
               borderRadius: 6,
               boxShadow: "0 0 12.507644653320312px 0px rgba(0, 64, 128, 0.1)",
-              width: "100%",
+              width: {
+                md: "100%",
+                xs: "96%",
+              },
             }}
           >
             <AppDiv sx={{ display: "flex", alignItems: "center" }}>
@@ -109,5 +112,8 @@ const cardCss = {
   p: 2,
   borderRadius: 6,
   boxShadow: "0 0 12.507644653320312px 0px rgba(0, 64, 128, 0.1)",
-  width: "100%",
+  width: {
+    md: "100%",
+    xs: "96%",
+  },
 };
