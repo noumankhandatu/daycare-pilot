@@ -1,9 +1,9 @@
 import * as React from "react";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import { Box } from "@mui/system";
 import { Avatar } from "@mui/material";
 import { Appcaption, Appheading } from "../../app-theme";
+import AppDiv from "../atoms/appDiv";
 
 export default function ProfileMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -17,7 +17,7 @@ export default function ProfileMenu() {
 
   return (
     <div>
-      <Box
+      <AppDiv
         onClick={handleClick}
         sx={{
           display: {
@@ -28,11 +28,11 @@ export default function ProfileMenu() {
         }}
       >
         <Avatar src={"https://mui.com/static/images/avatar/1.jpg"} sx={{ width: 56, height: 56 }} />
-        <Box sx={{ ml: 1 }}>
+        <AppDiv sx={{ ml: 1 }}>
           <Appheading sx={{ color: "black" }}>Hi Cody Fisher</Appheading>
           <Appcaption>Good Morning</Appcaption>
-        </Box>
-      </Box>
+        </AppDiv>
+      </AppDiv>
       <Menu
         id="basic-menu"
         anchorEl={anchorEl}

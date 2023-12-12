@@ -1,4 +1,4 @@
-import { Box, Container } from "@mui/material";
+import Container from "@mui/material/Container";
 import { AppButton } from "../../atoms/Buttons";
 import AppInput from "../../atoms/Input";
 import { primary } from "../../../app-theme/colors";
@@ -8,19 +8,20 @@ import { containerStyle, maindiv } from "./LoginForm";
 import { ROUTE_PATH } from "../../../utils/enums";
 import imagePlus from "../../../assets/images/image-plus.png";
 import AppImage from "../../atoms/Image";
+import AppDiv from "../../atoms/appDiv";
 
 const KidInfoForm = () => {
   return (
     <Container sx={containerStyle}>
-      <Box sx={maindiv}>
+      <AppDiv sx={maindiv}>
         <Appheading sx={{ textAlign: "center", fontWeight: "bolder", fontSize: 24 }}>
           Welcome to TinyTots daycare
         </Appheading>
         <Appfont sx={{ textAlign: "center", mt: 2 }}>Please enter your kid information</Appfont>
         <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-          <Box sx={imageBoxStyle}>
+          <AppDiv sx={imageBoxStyle}>
             <AppImage src={imagePlus} alt="ímg" sx={{ width: "50px", height: "50px" }} />
-          </Box>
+          </AppDiv>
         </div>
         <AppLabel sx={{ mt: 3 }}>Email </AppLabel>
         <AppInput fullWidth margin="normal" />
@@ -37,7 +38,7 @@ const KidInfoForm = () => {
             Next
           </AppButton>
         </Link>
-      </Box>
+      </AppDiv>
     </Container>
   );
 };

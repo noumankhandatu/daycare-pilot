@@ -1,4 +1,5 @@
-import { Typography, styled } from "@mui/material";
+import { styled } from "@mui/system";
+import Typography from "@mui/material/Typography";
 
 export const AppMainheading = styled(Typography)({
   fontFamily: "Urbanist",

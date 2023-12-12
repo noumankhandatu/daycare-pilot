@@ -1,4 +1,3 @@
-import Box from "@mui/system/Box";
 import Typography from "@mui/material/Typography";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
@@ -9,10 +8,11 @@ import { Appheading } from "../../app-theme";
 import AppImage from "../atoms/Image";
 import { primary, secondary } from "../../app-theme/colors";
 import { footerItems } from "../../utils/static-data";
+import AppDiv from "../atoms/appDiv";
 
 const Footer = () => {
   return (
-    <Box
+    <AppDiv
       sx={{
         backgroundColor: primary,
         color: "#fff",
@@ -23,8 +23,8 @@ const Footer = () => {
         mt: 20,
       }}
     >
-      <Box sx={mainDivStyle}>
-        <Box
+      <AppDiv sx={mainDivStyle}>
+        <AppDiv
           sx={{
             display: "flex",
             alignItems: "center",
@@ -40,8 +40,8 @@ const Footer = () => {
                 "brightness(0) saturate(100%) invert(14%) sepia(6%) saturate(5383%) hue-rotate(184deg) brightness(94%) contrast(85%)",
             }}
           />
-        </Box>
-        <Box
+        </AppDiv>
+        <AppDiv
           sx={{
             display: "flex",
             flexDirection: { xs: "column", md: "row" },
@@ -63,17 +63,17 @@ const Footer = () => {
               {items}
             </Appheading>
           ))}
-        </Box>
-        <Box sx={{ display: "flex", alignItems: "center" }}>
+        </AppDiv>
+        <AppDiv sx={{ display: "flex", alignItems: "center" }}>
           <AppIcons platform="facebook" icon={<LinkedInIcon sx={footerIconStyle} />} />
           <AppIcons platform="twitter" icon={<TwitterIcon sx={footerIconStyle} />} />
           <AppIcons platform="instagram" icon={<FacebookIcon sx={footerIconStyle} />} />
-        </Box>
-      </Box>
+        </AppDiv>
+      </AppDiv>
       <Typography variant="body2" sx={{ textAlign: "center", marginTop: 2, color: "black" }}>
         &copy; Copy Right DayCare-Pilot 2023
       </Typography>
-    </Box>
+    </AppDiv>
   );
 };
 

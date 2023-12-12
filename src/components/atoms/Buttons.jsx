@@ -1,5 +1,5 @@
-import { Button as Button } from "@mui/material";
 import { styled } from "@mui/system";
+import Button from "@mui/material/Button";
 
 // Custom styling for the button
 export const AppButton = styled(Button)({

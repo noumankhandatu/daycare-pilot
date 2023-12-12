@@ -1,7 +1,8 @@
 import * as React from "react";
 import { styled, useTheme } from "@mui/material/styles";
-import Box from "@mui/material/Box";
 import MuiDrawer from "@mui/material/Drawer";
+import Badge from "@mui/material/Badge";
+import InputAdornment from "@mui/material/InputAdornment";
 import MuiAppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
@@ -27,12 +28,12 @@ import { listArray, listObj } from "./type";
 import { AppMainheading, Appcaption } from "../../app-theme";
 import AppInput from "./../../components/atoms/Input";
 import SearchIcon from "@mui/icons-material/Search";
-import { Badge, InputAdornment } from "@mui/material";
 import { Stack } from "@mui/system";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import HomeTab from "./tabs/HomeTab";
 import CalenderTab from "./tabs/CalenderTab";
 import ProfileMenu from "../../components/molecules/menu";
+import AppDiv from "../../components/atoms/appDiv";
 const drawerWidth = 200;
 
 const openedMixin = (theme) => ({
@@ -153,7 +154,7 @@ export default function ParentDashboard() {
   };
   //
   return (
-    <Box sx={{ display: "flex" }}>
+    <AppDiv sx={{ display: "flex" }}>
       <CssBaseline />
       <AppBar
         position="fixed"
@@ -177,7 +178,7 @@ export default function ParentDashboard() {
           >
             <MenuIcon />
           </IconButton>
-          <Box
+          <AppDiv
             sx={{
               flexDirection: "column",
               display: {
@@ -188,8 +189,8 @@ export default function ParentDashboard() {
           >
             <AppMainheading sx={{ color: "black" }}>Hi Cody Fisher</AppMainheading>
             <Appcaption>Good Morning</Appcaption>
-          </Box>
-          <Box>
+          </AppDiv>
+          <AppDiv>
             <AppInput
               sx={{
                 width: {
@@ -208,7 +209,7 @@ export default function ParentDashboard() {
                 ),
               }}
             />
-          </Box>
+          </AppDiv>
           <Stack
             sx={{
               display: {
@@ -300,10 +301,10 @@ export default function ParentDashboard() {
           })}
         </List>
       </Drawer>
-      <Box component="main" sx={{ flexGrow: 1, p: 6, backgroundColor: "#F9F9F9" }}>
+      <AppDiv component="main" sx={{ flexGrow: 1, p: 6, backgroundColor: "#F9F9F9" }}>
         <DrawerHeader />
         {renderContent()}
-      </Box>
-    </Box>
+      </AppDiv>
+    </AppDiv>
   );
 }

@@ -2,7 +2,8 @@
 // import { AppMainheading } from "../../app-theme";
 // import { Appfont } from "./../../app-theme/index";
 // import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
-// import { Box } from "@mui/system";
+// import Box from '@mui/system/Box';
+
 // import DeleteIcon from "@mui/icons-material/Delete";
 // import EditIcon from "@mui/icons-material/Edit";
 // import AppIcons from "../atoms/Icon";
@@ -14,7 +15,7 @@
 //       >
 //         <AppMainheading>Closure - Stat History</AppMainheading>
 //         <Appfont>helo</Appfont>
-//         <Box sx={{ width: "300px", display: "flex", justifyContent: "flex-end" }}>
+//         <AppDiv sx={{ width: "300px", display: "flex", justifyContent: "flex-end" }}>
 //           <AppIcons
 //             platform="facebook"
 //             icon={<EditIcon sx={{ ...IconColors, backgroundColor: "#F85F89" }} />}
@@ -23,7 +24,7 @@
 //             platform="twitter"
 //             icon={<DeleteIcon sx={{ ...IconColors, backgroundColor: "#55ACEE" }} />}
 //           />
-//         </Box>
+//         </AppDiv>
 //         <CalendarMonthIcon />
 //       </AppPaper>
 //     </div>

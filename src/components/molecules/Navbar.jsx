@@ -20,7 +20,8 @@ import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import { Appheading } from "../../app-theme";
 import { navItems } from "../../utils/static-data";
 import { primary } from "../../app-theme/colors";
-import Box from "@mui/system/Box";
+import AppDiv from "../atoms/appDiv";
+
 const Navbar = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
@@ -29,9 +30,9 @@ const Navbar = () => {
     setSidebarOpen(!isSidebarOpen);
   };
   return (
-    <Box>
+    <AppDiv>
       {isMobile ? (
-        <Box
+        <AppDiv
           style={{
             display: "flex",
             justifyContent: "space-between",
@@ -54,7 +55,7 @@ const Navbar = () => {
           {/* Add Drawer for the sidebar */}
           <Drawer anchor="right" open={isSidebarOpen} onClose={handleSidebarToggle}>
             {/* Content of the sidebar */}
-            <Box sx={{ width: "250px", padding: "16px", background: primary, height: "100vh" }}>
+            <AppDiv sx={{ width: "250px", padding: "16px", background: primary, height: "100vh" }}>
               {navItems.map((text, index) => (
                 <ListItem id={index} key={text} disablePadding>
                   <ListItemButton>
@@ -65,14 +66,14 @@ const Navbar = () => {
                   </ListItemButton>
                 </ListItem>
               ))}
-            </Box>
+            </AppDiv>
           </Drawer>
-        </Box>
+        </AppDiv>
       ) : (
-        <Box style={{ display: "flex", justifyContent: "center", backgroundColor: primary }}>
-          <Box sx={mainDivStyle}>
+        <AppDiv style={{ display: "flex", justifyContent: "center", backgroundColor: primary }}>
+          <AppDiv sx={mainDivStyle}>
             {/* Left side items */}
-            <Box sx={{ display: "flex", width: "310px" }}>
+            <AppDiv sx={{ display: "flex", width: "310px" }}>
               {navItems?.map((items, id) => {
                 return (
                   <Appheading sx={{ ml: 2, cursor: "pointer" }} key={id}>
@@ -80,19 +81,19 @@ const Navbar = () => {
                   </Appheading>
                 );
               })}
-            </Box>
+            </AppDiv>
 
             {/* Center image */}
-            <Box
+            <AppDiv
               sx={{ flexGrow: 1, display: "flex", justifyContent: "center", position: "relative" }}
             >
               <Paper sx={imagePositionStyle}>
                 <AppImage src={logo} alt="Logo" />
               </Paper>
-            </Box>
+            </AppDiv>
 
             {/* Right side icons */}
-            <Box sx={{ width: "300px", display: "flex", justifyContent: "flex-end" }}>
+            <AppDiv sx={{ width: "300px", display: "flex", justifyContent: "flex-end" }}>
               <AppIcons
                 platform="facebook"
                 icon={<InstagramIcon sx={{ ...IconColors, backgroundColor: "#F85F89" }} />}
@@ -106,11 +107,11 @@ const Navbar = () => {
                 platform="instagram"
                 icon={<FacebookIcon sx={{ ...IconColors, backgroundColor: "#3B5998" }} />}
               />
-            </Box>
-          </Box>
-        </Box>
+            </AppDiv>
+          </AppDiv>
+        </AppDiv>
       )}
-    </Box>
+    </AppDiv>
   );
 };
 

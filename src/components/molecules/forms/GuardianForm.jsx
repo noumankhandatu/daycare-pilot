@@ -1,4 +1,4 @@
-import { Box, Container } from "@mui/material";
+import Container from "@mui/material/Container";
 import { AppButton } from "../../atoms/Buttons";
 import AppInput from "../../atoms/Input";
 import { primary } from "../../../app-theme/colors";
@@ -6,11 +6,12 @@ import { AppLabel, Appfont, Appheading } from "../../../app-theme";
 import { containerStyle, maindiv } from "./LoginForm";
 import { ROUTE_PATH } from "../../../utils/enums";
 import { Link } from "react-router-dom";
+import AppDiv from "../../atoms/appDiv";
 
 const GuardianForm = () => {
   return (
     <Container sx={containerStyle}>
-      <Box sx={maindiv}>
+      <AppDiv sx={maindiv}>
         <Appheading sx={{ textAlign: "center", fontWeight: "bolder" }}>
           Enter Guardians Info
         </Appheading>
@@ -30,7 +31,7 @@ const GuardianForm = () => {
             Next
           </AppButton>
         </Link>
-      </Box>
+      </AppDiv>
     </Container>
   );
 };

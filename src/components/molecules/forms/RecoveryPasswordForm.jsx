@@ -1,5 +1,4 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import { Box, Container, IconButton, InputAdornment } from "@mui/material";
 import { AppButton } from "../../atoms/Buttons";
 import AppInput from "../../atoms/Input";
 import { primary } from "../../../app-theme/colors";
@@ -9,6 +8,10 @@ import { containerStyle, maindiv } from "./LoginForm";
 import { ROUTE_PATH } from "../../../utils/enums";
 import { useRef, useState } from "react";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
+import AppDiv from "../../atoms/appDiv";
+import IconButton from "@mui/material/IconButton";
+import Container from "@mui/material/Container";
+import InputAdornment from "@mui/material/InputAdornment";
 
 const RecoveryPasswordForm = () => {
   const navigate = useNavigate();
@@ -52,7 +55,7 @@ const RecoveryPasswordForm = () => {
   };
   return (
     <Container sx={containerStyle}>
-      <Box sx={maindiv}>
+      <AppDiv sx={maindiv}>
         <Appheading sx={{ textAlign: "center", fontWeight: "bolder" }}>
           Recovery Password
         </Appheading>
@@ -60,7 +63,7 @@ const RecoveryPasswordForm = () => {
           Reset code was sent to your email. Please enter the code and create new password.
         </Appfont>
         {/* OTP Input Boxes */}
-        <Box display="flex" justifyContent="center" gap={2}>
+        <AppDiv display="flex" justifyContent="center" gap={2}>
           {otpInputs.map((inputRef, index) => (
             <AppInput
               className={shakeInputs ? "shake" : ""}
@@ -76,7 +79,7 @@ const RecoveryPasswordForm = () => {
               onChange={handleOtpInputChange(index)}
             />
           ))}
-        </Box>
+        </AppDiv>
         <AppLabel>Password</AppLabel>
         <AppInput
           placeholder="Enter your password"
@@ -94,7 +97,7 @@ const RecoveryPasswordForm = () => {
             ),
           }}
         />
-        <Box height="20px" />
+        <AppDiv height="20px" />
         <AppLabel>Confirm Password</AppLabel>
         <AppInput
           placeholder="Enter your password"
@@ -114,7 +117,7 @@ const RecoveryPasswordForm = () => {
         />
 
         {!isPasswordMatch && (
-          <Box sx={{ color: "red", textAlign: "center", mt: 2 }}>Passwords do not match.</Box>
+          <AppDiv sx={{ color: "red", textAlign: "center", mt: 2 }}>Passwords do not match.</AppDiv>
         )}
 
         <AppButton
@@ -125,7 +128,7 @@ const RecoveryPasswordForm = () => {
         >
           Change Password
         </AppButton>
-      </Box>
+      </AppDiv>
     </Container>
   );
 };

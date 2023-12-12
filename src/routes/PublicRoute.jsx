@@ -1,13 +1,13 @@
 import Login from "../pages/Login";
-import ForgetPassword from "../pages/ForgetPassword";
-import RecoveryPassword from "../pages/RecoveryPassword";
-import LoginSuccessfull from "./../pages/LoginSuccessfull";
-import KidInformation from "../pages/KidInformation";
-import GuardianInformation from "../pages/GuardianInfo";
 import { ROUTE_PATH } from "../utils/enums";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import ParentDashboard from "../dashboards/parent-dashboard";
 import AppLayout from "../components/wrapper/AppLayout";
+import ForgetPassword from "./../pages/ForgetPassword";
+import RecoveryPassword from "./../pages/RecoveryPassword";
+import LoginSuccessfull from "./../pages/LoginSuccessfull";
+import KidInformation from "./../pages/KidInformation";
+import GuardianInformation from './../pages/GuardianInfo';
+import ParentDashboard from './../dashboards/parent-dashboard/index';
 
 const PublicRoutes = () => {
   return (

@@ -1,4 +1,4 @@
-import { Box, Container } from "@mui/material";
+import Container from "@mui/material/Container";
 import { AppButton } from "../../atoms/Buttons";
 import { primary } from "../../../app-theme/colors";
 import { AppLabel, Appheading } from "../../../app-theme";
@@ -7,10 +7,12 @@ import { containerStyle, maindiv } from "./LoginForm";
 import { ROUTE_PATH } from "../../../utils/enums";
 import successImg from "../../../assets/images/success.png";
 import AppImage from "./../../atoms/Image";
+import AppDiv from "../../atoms/appDiv";
+
 const LoginSuccessfullForm = () => {
   return (
     <Container sx={containerStyle}>
-      <Box sx={maindiv}>
+      <AppDiv sx={maindiv}>
         <div style={{ textAlign: "center" }}>
           <AppImage
             src={successImg}
@@ -32,7 +34,7 @@ const LoginSuccessfullForm = () => {
             Login
           </AppButton>
         </Link>
-      </Box>
+      </AppDiv>
     </Container>
   );
 };

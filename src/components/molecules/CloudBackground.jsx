@@ -1,16 +1,16 @@
-import { Box } from "@mui/system";
 import rocketImage from "../../assets/images/rocket.png";
 import bg from "../../assets/images/cloud.png";
 import AppImage from "../atoms/Image";
+import AppDiv from "../atoms/appDiv";
 
 const CloudBackground = () => {
   return (
     <div>
-      <Box sx={imageStyle}>
-        <Box sx={{ textAlign: "right", position: "relative", top: "150px" }}>
+      <AppDiv sx={imageStyle}>
+        <AppDiv sx={{ textAlign: "right", position: "relative", top: "150px" }}>
           <AppImage src={rocketImage} alt="" sx={{ width: "110px" }} />
-        </Box>
-      </Box>
+        </AppDiv>
+      </AppDiv>
     </div>
   );
 };
