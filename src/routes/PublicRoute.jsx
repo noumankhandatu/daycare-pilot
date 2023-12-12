@@ -7,7 +7,7 @@ import GuardianInformation from "../pages/GuardianInfo";
 import { ROUTE_PATH } from "../utils/enums";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ParentDashboard from "../dashboards/parent-dashboard";
-import AppLayout from "../wrapper/AppLayout";
+import AppLayout from "../components/wrapper/AppLayout";
 
 const PublicRoutes = () => {
   return (

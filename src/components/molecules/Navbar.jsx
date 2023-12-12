@@ -11,7 +11,6 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import logo from "../../assets/images/logo.png";
-import { Box } from "@mui/system";
 import AppIcons from "../atoms/Icon";
 import AppImage from "../atoms/Image";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -21,6 +20,7 @@ import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import { Appheading } from "../../app-theme";
 import { navItems } from "../../utils/static-data";
 import { primary } from "../../app-theme/colors";
+import Box from "@mui/system/Box";
 const Navbar = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
