@@ -26,7 +26,7 @@ export const dummySmsData = {
     },
     {
       sender: "Jane Doe",
-      text: "That sounds like a great idea! I'm free on Thursday. How about we meet at the usual spot?",
+      text: "That sounds like a great idea! I'm free on Thursday. How about we meet at the usual spot? That sounds like a great idea! I'm free on Thursday. How about we meet at the usual spot?That sounds like a great idea! I'm free on Thursday. How about we meet at the usual spot?That sounds like a great idea! I'm free on Thursday. How about we meet at the usual spot?That sounds like a great idea! I'm free on Thursday. How about we meet at the usual spot?That sounds like a great idea! I'm free on Thursday. How about we meet at the usual spot?That sounds like a great idea! I'm free on Thursday. How about we meet at the usual spot?That sounds like a great idea! I'm free on Thursday. How about we meet at the usual spot?That sounds like a great idea! I'm free on Thursday. How about we meet at the usual spot?That sounds like a great idea! I'm free on Thursday. How about we meet at the usual spot?",
     },
     { sender: "John Doe", text: "Perfect! Thursday it is. Looking forward to it!" },
     { sender: "John Doe", text: "Perfect! Thursday it is. Looking forward to it!" },

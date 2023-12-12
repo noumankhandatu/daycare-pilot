@@ -1,3 +1,4 @@
+import AppPaper from "../../../components/atoms/paper";
 import AppInput from "../../../components/atoms/Input";
 import SendIcon from "@mui/icons-material/Send";
 import CameraAltIcon from "@mui/icons-material/CameraAlt";
@@ -8,46 +9,28 @@ import { Avatar, InputAdornment } from "@mui/material";
 import MsgRecieverCard from "../../../components/molecules/MsgRecieverCard";
 import image from "../../../assets/avatars/nas.webp";
 import { dummySmsData } from "../../../utils/static-data";
+
 const ChatLayout = () => {
   return (
-    <div
-      style={{
-        display: "flex",
-        background: "white",
-      }}
-    >
+    <AppDiv sx={{ display: "flex" }}>
       {/* Left side (Paper showing sender information) */}
-      <div
-        style={{
-          flex: "0 0 30%",
-          padding: "16px",
-          borderRight: "1px solid #ccc",
-        }}
-      >
+      <AppDiv sx={leftSide}>
         <MsgRecieverCard />
         <MsgRecieverCard />
-      </div>
+      </AppDiv>
 
-      <div
-        style={{
-          flex: "1",
-          padding: "16px",
-          overflowY: "auto",
-          display: "flex",
-          position: "relative",
-          flexDirection: "column",
-        }}
-      >
+      {/* Right side */}
+      <AppPaper sx={mainDiv}>
         {dummySmsData.messages.map((message, index) => (
-          <div
+          <AppDiv
             key={index}
-            style={{
+            sx={{
               display: "flex",
               justifyContent: message.sender === dummySmsData.sender ? "flex-end" : "flex-start",
               marginBottom: "16px",
             }}
           >
-            <div
+            <AppDiv
               style={{
                 maxWidth: "70%",
                 padding: "10px",
@@ -69,7 +52,8 @@ const ChatLayout = () => {
                 />
               )}
               {/* both texts friend and me */}
-              <strong>{message.sender}:</strong> {message.text}
+              {/* <strong>{message.sender}:</strong> */}
+              <span style={{ fontSize: 14 }}>{message.text}</span>
               {message.sender == dummySmsData.sender && (
                 <Avatar
                   alt="Remy Sharp"
@@ -87,10 +71,10 @@ const ChatLayout = () => {
                   }}
                 />
               )}
-            </div>
-          </div>
+            </AppDiv>
+          </AppDiv>
         ))}
-        <AppDiv sx={{height:"120px"}}/>
+        <AppDiv sx={{ height: "120px" }} />
         <AppDiv
           sx={{
             display: "flex",
@@ -121,9 +105,30 @@ const ChatLayout = () => {
             }}
           />
         </AppDiv>
-      </div>
-    </div>
+      </AppPaper>
+    </AppDiv>
   );
+};
+
+const leftSide = {
+  flex: "0 0 30%",
+  padding: "16px",
+  position: "fixed",
+  left: 200,
+  width: "30%",
+  top: 90,
+  background: "linear-gradient(90deg, rgba(249,249,249,1) 0%, rgba(255,255,255,1) 100%)",
+  height: "100vh",
+};
+
+const mainDiv = {
+  flex: "1",
+  padding: "20px",
+  overflowY: "auto",
+  display: "flex",
+  position: "relative",
+  flexDirection: "column",
+  marginLeft: 60,
 };
 
 export default ChatLayout;
