@@ -12,7 +12,14 @@ import { dummySmsData } from "../../../utils/static-data";
 
 const ChatLayout = () => {
   return (
-    <AppDiv sx={{ display: "flex" }}>
+    <AppDiv
+      sx={{
+        display: {
+          md: "flex",
+          xs: "block",
+        },
+      }}
+    >
       {/* Left side (Paper showing sender information) */}
       <AppDiv sx={leftSide}>
         <MsgRecieverCard />
@@ -32,15 +39,20 @@ const ChatLayout = () => {
           >
             <AppDiv
               style={{
-                maxWidth: "70%",
                 padding: "10px",
                 borderRadius: 10,
                 borderBottomLeftRadius: message.sender === dummySmsData.sender ? 10 : 0,
                 borderBottomRightRadius: message.sender !== dummySmsData.sender ? 10 : 0,
                 backgroundColor: message.sender === dummySmsData.sender ? "#DCF8C6" : "#E6E6E6",
                 position: "relative",
-                marginLeft: "30px",
-                marginRight: "30px",
+                marginLeft: {
+                  lg: "30px",
+                  xs: "10px",
+                },
+                marginRight: {
+                  lg: "30px",
+                  xs: "10px",
+                },
               }}
             >
               {message.sender !== dummySmsData.sender && (
@@ -55,21 +67,7 @@ const ChatLayout = () => {
               {/* <strong>{message.sender}:</strong> */}
               <span style={{ fontSize: 14 }}>{message.text}</span>
               {message.sender == dummySmsData.sender && (
-                <Avatar
-                  alt="Remy Sharp"
-                  src={image}
-                  size="small"
-                  sx={{
-                    width: "15px",
-                    height: "15px",
-                    borderRadius: "50%",
-                    backgroundColor: "#ccc",
-                    marginRight: "8px",
-                    position: "absolute",
-                    bottom: 0,
-                    right: -35,
-                  }}
-                />
+                <Avatar alt="Remy Sharp" src={image} size="small" sx={avatarStyle} />
               )}
             </AppDiv>
           </AppDiv>
@@ -113,22 +111,47 @@ const ChatLayout = () => {
 const leftSide = {
   flex: "0 0 30%",
   padding: "16px",
-  position: "fixed",
-  left: 200,
-  width: "30%",
-  top: 90,
+  position: {
+    md: "fixed",
+    xs: "static",
+  },
+  width: {
+    lg: "400px",
+    md: "300px",
+    xs: "100%",
+  },
   background: "linear-gradient(90deg, rgba(249,249,249,1) 0%, rgba(255,255,255,1) 100%)",
-  height: "100vh",
+  height: {
+    lg: "100vh",
+    md: "100%",
+  },
 };
 
 const mainDiv = {
   flex: "1",
-  padding: "20px",
+  padding: {
+    lg: "20px",
+    xs: "10px",
+  },
   overflowY: "auto",
   display: "flex",
   position: "relative",
   flexDirection: "column",
-  marginLeft: 60,
+  marginLeft: {
+    lg: 60,
+    md: 40,
+    xs: 0,
+  },
 };
 
+const avatarStyle = {
+  width: "15px",
+  height: "15px",
+  borderRadius: "50%",
+  backgroundColor: "#ccc",
+  marginRight: "8px",
+  position: "absolute",
+  bottom: 0,
+  right: -35,
+};
 export default ChatLayout;

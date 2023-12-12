@@ -12,7 +12,7 @@ const CalenderTab = () => {
     <>
       <EventModal />
       <Grid container spacing={2}>
-        <Grid xs={8}>
+        <Grid xs={12} lg={8}>
           <AppPaper
             sx={{
               flex: 1,
@@ -20,17 +20,17 @@ const CalenderTab = () => {
             }}
           >
             <FormGroup sx={{ display: "flex" }}>
-              <Grid container spacing={2}>
-                <Grid xs={3}>
+              <Grid container spacing={2} justifyContent={'center'}>
+                <Grid md={3}>
                   <FormControlLabel control={<Checkbox color="warning" />} label="All" />
                 </Grid>
-                <Grid xs={3}>
+                <Grid md={3}>
                   <FormControlLabel control={<Checkbox color="warning" />} label="Holidays" />{" "}
                 </Grid>
-                <Grid xs={3}>
+                <Grid md={3}>
                   <FormControlLabel control={<Checkbox color="warning" />} label="Events" />
                 </Grid>
-                <Grid xs={3}>
+                <Grid md={3}>
                   <FormControlLabel control={<Checkbox color="warning" />} label="Kids" />
                 </Grid>
               </Grid>
@@ -39,7 +39,7 @@ const CalenderTab = () => {
             <EventsCard />
           </AppPaper>
         </Grid>
-        <Grid xs={4}>
+        <Grid xs={12} lg={4}>
           <Calendar />
         </Grid>
       </Grid>

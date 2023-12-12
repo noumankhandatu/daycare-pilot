@@ -15,7 +15,10 @@ const EventsCard = () => {
         sx={{
           boxShadow: "0 11.926605224609375px 47.7064208984375px 0px rgba(0, 64, 128, 0.1)",
           p: 2,
-          display: "flex",
+          display: {
+            sm: "flex",
+            xs: "block",
+          },
           justifyContent: "space-between",
           borderBottomRightRadius: "0px",
           borderBottomLeftRadius: "0px",
@@ -33,7 +36,16 @@ const EventsCard = () => {
             </Appfont>
           </AppDiv>
         </div>
-        <AppDiv sx={{ width: "300px", display: "flex", justifyContent: "flex-end" }}>
+        <AppDiv
+          sx={{
+            width: {
+              lg: "300px",
+              xs: "100%",
+            },
+            display: "flex",
+            justifyContent: "flex-end",
+          }}
+        >
           <AppIcons
             platform="facebook"
             icon={<EditIcon sx={{ ...IconColors, backgroundColor: primary }} />}
