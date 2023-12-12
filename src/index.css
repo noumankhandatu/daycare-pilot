@@ -41,3 +41,17 @@
     -o-transform: translateX(5px);
   }
 }
+
+.css-4pax7l-MuiPickersLayout-root .MuiPickersLayout-toolbar {
+  display: none !important;
+}
+.css-4pax7l-MuiPickersLayout-root .MuiPickersLayout-actionBar {
+  display: none !important;
+}
+
+.css-1u23akw-MuiButtonBase-root-MuiPickersDay-root.Mui-selected {
+  background-color: #fbb821 !important;
+}
+.css-jgls56-MuiButtonBase-root-MuiPickersDay-root.Mui-selected {
+  background-color: #fbb821 !important;
+}
