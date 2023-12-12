@@ -45,7 +45,7 @@ const openedMixin = (theme) => ({
   overflowX: "hidden",
   border: "none",
   boxShadow: "2px 2px 2px 0px #efefef",
-  zIndex: 9999,
+  zIndex: 1202,
 });
 
 const closedMixin = (theme) => ({

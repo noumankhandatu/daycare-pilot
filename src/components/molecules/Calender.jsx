@@ -3,7 +3,8 @@ import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { StaticDatePicker } from "@mui/x-date-pickers/StaticDatePicker";
 
-const Calendar = () => {
+// eslint-disable-next-line react/prop-types
+const Calendar = ({ show = true }) => {
   const [value, setValue] = useState(new Date());
 
   const handleDateChange = (newValue) => {
@@ -21,6 +22,7 @@ const Calendar = () => {
           slotProps={{
             calendarHeader: {
               sx: {
+                display: show ? "relative" : "none",
                 position: "relative",
                 "& .MuiPickersArrowSwitcher-root": {
                   width: 0,

@@ -5,29 +5,14 @@ import Grid from "@mui/material/Unstable_Grid2";
 import AppPaper from "../../../components/atoms/paper";
 import EventsCard from "../../../components/molecules/EventsCard";
 import Calendar from "../../../components/molecules/Calender";
-import AppDiv from "../../../components/atoms/appDiv";
-import { AppButton } from "./../../../components/atoms/Buttons";
-import AddIcon from "@mui/icons-material/Add";
+import EventModal from "../../../components/molecules/EventModal";
 
 const CalenderTab = () => {
-  const handleAdd = () => {
-    alert("");
-  };
   return (
     <>
-      <AppDiv sx={{ display: "flex", justifyContent: "flex-end", mt: 2, mb: 4 }}>
-        <AppButton
-          onClick={handleAdd}
-          color="warning"
-          variant="contained"
-          sx={{ width: "152px", height: "42px" }}
-          startIcon={<AddIcon />}
-        >
-          Add
-        </AppButton>
-      </AppDiv>
+      <EventModal />
       <Grid container spacing={2}>
-        <Grid xs={7}>
+        <Grid xs={8}>
           <AppPaper
             sx={{
               flex: 1,
