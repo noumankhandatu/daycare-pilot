@@ -16,7 +16,7 @@ const HomeTab = () => {
     { imageUrl: kidImg, name: "nouman" },
   ];
   return (
-    <Grid container>
+    <Grid container spacing={2}>
       <Grid xs={12} md={7}>
         {userList?.map((user, index) => (
           <Card

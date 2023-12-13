@@ -129,10 +129,7 @@ const leftSide = {
 
 const mainDiv = {
   flex: "1",
-  padding: {
-    lg: "20px",
-    xs: "10px",
-  },
+  padding: 6,
   overflowY: "auto",
   display: "flex",
   position: "relative",
