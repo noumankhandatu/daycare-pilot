@@ -39,6 +39,7 @@ import AlertTab from "./tabs/AlertTab";
 import AnnouncementsTab from "./tabs/Announcements ";
 import ProfileTab from "./tabs/ProfileTab";
 import AppIcons from "../../components/atoms/Icon";
+import ReportTab from "./tabs/ReportTab";
 const drawerWidth = 200;
 
 const openedMixin = (theme) => ({
@@ -150,7 +151,7 @@ export default function ParentDashboard() {
       case DrawerElementTypes.ANNOUNCMENT:
         return <AnnouncementsTab />;
       case DrawerElementTypes.REPORT:
-        return <Typography>Content for REPORT</Typography>;
+        return <ReportTab />;
       case DrawerElementTypes.PROFILE:
         return <ProfileTab />;
       default:

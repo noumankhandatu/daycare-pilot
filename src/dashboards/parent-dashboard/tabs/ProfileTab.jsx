@@ -10,40 +10,50 @@ import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import ShareIcon from "@mui/icons-material/Share";
 import { useState } from "react";
 import MyProfile from "./ProfileTabs/myProfle";
+import MySetting from "./ProfileTabs/mySetting";
+import { ProfileElementTypes } from "../type";
+import MyRefer from "./ProfileTabs/myRefer";
+import MyChildern from "./ProfileTabs/myChildern";
 const ProfileTab = () => {
   const [selectedText, setSelectedText] = useState("");
 
   const profileItems = [
     {
-      title: "Profile",
+      title: ProfileElementTypes.PROFILE,
       Icon: <DescriptionIcon />,
     },
     {
-      title: "My Children",
+      title: ProfileElementTypes.MY_CHILDREN,
       Icon: <PersonOutlineIcon />,
     },
     {
-      title: "Settings",
+      title: ProfileElementTypes.SETTINGS,
       Icon: <SettingsOutlinedIcon />,
     },
     {
-      title: "About Us",
+      title: ProfileElementTypes.ABOUT_US,
       Icon: <CopyrightIcon />,
     },
     {
-      title: "Help & FAQ",
+      title: ProfileElementTypes.HELP_FAQ,
       Icon: <HelpOutlineIcon />,
     },
     {
-      title: "Refer Friend & Family",
+      title: ProfileElementTypes.REFER,
       Icon: <ShareIcon />,
     },
   ];
 
   const renderContent = () => {
     switch (selectedText) {
-      case "Profile":
+      case ProfileElementTypes.PROFILE:
         return <MyProfile />;
+      case ProfileElementTypes.MY_CHILDREN:
+        return <MyChildern />;
+      case ProfileElementTypes.SETTINGS:
+        return <MySetting />;
+      case ProfileElementTypes.REFER:
+        return <MyRefer />;
 
       default:
         return <>404 No Tab Found</>;
