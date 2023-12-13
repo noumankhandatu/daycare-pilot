@@ -24,8 +24,8 @@ import WarningIcon from "@mui/icons-material/Warning";
 import VolumeUpIcon from "@mui/icons-material/VolumeUp";
 import ReportIcon from "@mui/icons-material/Report";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import { listArray, listObj } from "./type";
-import { AppMainheading, Appcaption } from "../../app-theme";
+import { DrawerElementTypes } from "./type";
+import { AppMainheading, Appcaption, Appfont } from "../../app-theme";
 import AppInput from "./../../components/atoms/Input";
 import SearchIcon from "@mui/icons-material/Search";
 import { Stack } from "@mui/system";
@@ -37,6 +37,8 @@ import AppDiv from "../../components/atoms/appDiv";
 import MessageTab from "./tabs/MessageTab";
 import AlertTab from "./tabs/AlertTab";
 import AnnouncementsTab from "./tabs/Announcements ";
+import ProfileTab from "./tabs/ProfileTab";
+import AppIcons from "../../components/atoms/Icon";
 const drawerWidth = 200;
 
 const openedMixin = (theme) => ({
@@ -121,7 +123,7 @@ const ListItemContainer = styled(ListItemButton)(({ theme, isSelected }) => ({
 export default function ParentDashboard() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(true);
-  const [selectedItem, setSelectedItem] = React.useState(listObj.HOME);
+  const [selectedItem, setSelectedItem] = React.useState(DrawerElementTypes.HOME);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -137,22 +139,22 @@ export default function ParentDashboard() {
 
   const renderContent = () => {
     switch (selectedItem) {
-      case listObj.HOME.toString():
+      case DrawerElementTypes.HOME.toString():
         return <HomeTab />;
-      case listObj.CALENDAR:
+      case DrawerElementTypes.CALENDAR:
         return <CalenderTab />;
-      case listObj.MESSAGE:
+      case DrawerElementTypes.MESSAGE:
         return <MessageTab />;
-      case listObj.ALERTS:
+      case DrawerElementTypes.ALERTS:
         return <AlertTab />;
-      case listObj.ANNOUNCMENT:
+      case DrawerElementTypes.ANNOUNCMENT:
         return <AnnouncementsTab />;
-      case listObj.REPORT:
+      case DrawerElementTypes.REPORT:
         return <Typography>Content for REPORT</Typography>;
-      case listObj.PROFILE:
-        return <Typography>Content for PROFILE</Typography>;
+      case DrawerElementTypes.PROFILE:
+        return <ProfileTab />;
       default:
-        return <Typography>Content not available</Typography>;
+        return <Typography>404 No Tab Found</Typography>;
     }
   };
   //
@@ -238,81 +240,86 @@ export default function ParentDashboard() {
           )}
         </DrawerHeader>
         <List>
-          {listArray.map((text, index) => {
+          {DrawerElements?.map((items, index) => {
+            const text = items.title;
+            const Icon = items.Icon;
             return (
               <ListItem key={index} sx={{ display: "block" }} onClick={() => handleItemClick(text)}>
                 <ListItemContainer
                   isSelected={selectedItem === text}
-                  onClick={() => handleItemClick(text)}
                   sx={{
                     mr: open ? 3 : "auto",
                     justifyContent: "center",
                   }}
                 >
                   <ListItemIcon sx={{ minWidth: "30px" }}>
-                    {index === 0 && (
-                      <HomeIcon
-                        sx={selectedItem === text ? { color: "white" } : { color: alpha }}
-                      />
-                    )}
-                    {index === 1 && (
-                      <CalendarMonthIcon
-                        sx={selectedItem === text ? { color: "white" } : { color: alpha }}
-                      />
-                    )}
-                    {index === 2 && (
-                      <EmailIcon
-                        sx={selectedItem === text ? { color: "white" } : { color: alpha }}
-                      />
-                    )}
-                    {index === 3 && (
-                      <WarningIcon
-                        sx={selectedItem === text ? { color: "white" } : { color: alpha }}
-                      />
-                    )}
-                    {index === 4 && (
-                      <VolumeUpIcon
-                        sx={selectedItem === text ? { color: "white" } : { color: alpha }}
-                      />
-                    )}
-                    {index === 5 && (
-                      <ReportIcon
-                        sx={selectedItem === text ? { color: "white" } : { color: alpha }}
-                      />
-                    )}
-                    {index === 6 && (
-                      <AccountCircleIcon
-                        sx={selectedItem === text ? { color: "white" } : { color: alpha }}
-                      />
-                    )}
+                    <AppIcons
+                      platform="arrow"
+                      icon={Icon}
+                      sx={selectedItem === text ? { color: "white" } : { color: alpha }}
+                    />
                   </ListItemIcon>
-                  <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
+                  <ListItemText
+                    disableTypography
+                    sx={{ opacity: open ? 1 : 0 }}
+                    primary={<Appfont sx={{ fontSize: 14, fontWeight: 600 }}>{text}</Appfont>}
+                  />
                 </ListItemContainer>
               </ListItem>
             );
           })}
         </List>
       </Drawer>
-      <AppDiv
-        sx={{
-          flexGrow: 1,
-          backgroundColor: "#F9F9F9",
-          pt: 6,
-          pl: {
-            lg: 2,
-            xs: 1,
-          },
-          pr: {
-            lg: 2,
-            xs: 1,
-          },
-          pb: 6,
-          width: "10%",
-        }}
-      >
+      <AppDiv sx={sty}>
         <DrawerHeader />
         {renderContent()}
       </AppDiv>
     </AppDiv>
   );
 }
+const DrawerElements = [
+  {
+    title: DrawerElementTypes.HOME,
+    Icon: <HomeIcon />,
+  },
+  {
+    title: DrawerElementTypes.CALENDAR,
+    Icon: <CalendarMonthIcon />,
+  },
+  {
+    title: DrawerElementTypes.MESSAGE,
+    Icon: <EmailIcon />,
+  },
+  {
+    title: DrawerElementTypes.ALERTS,
+    Icon: <WarningIcon />,
+  },
+  {
+    title: DrawerElementTypes.ANNOUNCMENT,
+    Icon: <VolumeUpIcon />,
+  },
+  {
+    title: DrawerElementTypes.REPORT,
+    Icon: <ReportIcon />,
+  },
+  {
+    title: DrawerElementTypes.PROFILE,
+    Icon: <AccountCircleIcon />,
+  },
+];
+
+const sty = {
+  flexGrow: 1,
+  backgroundColor: "#F9F9F9",
+  pt: 6,
+  pl: {
+    lg: 2,
+    xs: 1,
+  },
+  pr: {
+    lg: 2,
+    xs: 1,
+  },
+  pb: 6,
+  width: "10%",
+};

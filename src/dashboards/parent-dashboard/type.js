@@ -1,4 +1,4 @@
-export const listObj = {
+export const DrawerElementTypes = {
   HOME: "Home",
   CALENDAR: "Calendar",
   MESSAGE: "Messages",
@@ -7,6 +7,3 @@ export const listObj = {
   REPORT: "Report",
   PROFILE: "Profile",
 };
-
-
-export const listArray = ["Home", "Calendar", "Messages", "Alerts", "Announcements", "Report", "Profile"]
