@@ -55,3 +55,12 @@
 .css-jgls56-MuiButtonBase-root-MuiPickersDay-root.Mui-selected {
   background-color: #fbb821 !important;
 }
+.css-12dowjx-MuiPickersLayout-root .MuiPickersLayout-toolbar {
+  display: none !important;
+}
+.css-1oecdew-MuiPickersLayout-root .MuiPickersLayout-toolbar {
+  display: none !important;
+}
+.css-1oecdew-MuiPickersLayout-root .MuiPickersLayout-actionBar {
+  display: none !important;
+}

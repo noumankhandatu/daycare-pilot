@@ -8,7 +8,16 @@ import { primary } from "../../../../app-theme/colors";
 const MySetting = () => {
   return (
     <div>
-      <AppDiv sx={{ display: "flex", alignItems: "stretch", flexDirection: "column" }}>
+      <AppDiv
+        sx={{
+          display: {
+            lg: "flex",
+            xs: "block",
+          },
+          alignItems: "stretch",
+          flexDirection: "column",
+        }}
+      >
         <AppDiv sx={{ display: "flex", justifyContent: "center", mb: 2 }}>
           <ButtonGroup variant="outlined" aria-label="outlined button group">
             <AppButton
@@ -37,7 +46,15 @@ const MySetting = () => {
             </AppButton>
           </ButtonGroup>
         </AppDiv>
-        <AppDiv sx={{ display: "flex", justifyContent: "center" }}>
+        <AppDiv
+          sx={{
+            display: {
+              lg: "flex",
+              xs: "block",
+            },
+            justifyContent: "center",
+          }}
+        >
           <Avatar
             src={"https://mui.com/static/images/avatar/1.jpg"}
             sx={{
@@ -48,25 +65,61 @@ const MySetting = () => {
             }}
           />
         </AppDiv>
-        <AppDiv sx={{ display: "flex", justifyContent: "space-between", mt: 2, mb: 1 }}>
+        <AppDiv
+          sx={{
+            display: {
+              lg: "flex",
+              xs: "block",
+            },
+            justifyContent: "space-between",
+            mt: 2,
+            mb: 1,
+          }}
+        >
           <div style={{ width: "100%" }}>
             <AppLabel>Child Full Name</AppLabel>
             <AppInput placeholder="Child Full Name" fullWidth margin="normal" />
           </div>
-          <div style={{ marginLeft: 10, width: "100%" }}>
+          <AppDiv
+            style={{
+              marginLeft: {
+                lg: 10,
+                xs: 0,
+              },
+              width: "100%",
+            }}
+          >
             <AppLabel>Primary contact #</AppLabel>
             <AppInput placeholder="Primary contact #" type="password" fullWidth margin="normal" />
-          </div>
+          </AppDiv>
         </AppDiv>
-        <AppDiv sx={{ display: "flex", justifyContent: "space-between", mt: 2, mb: 1 }}>
+        <AppDiv
+          sx={{
+            display: {
+              lg: "flex",
+              xs: "block",
+            },
+            justifyContent: "space-between",
+            mt: 2,
+            mb: 1,
+          }}
+        >
           <div style={{ width: "100%" }}>
             <AppLabel> Date of Birth</AppLabel>
             <AppInput placeholder="Date of Birth" fullWidth margin="normal" />
           </div>
-          <div style={{ marginLeft: 10, width: "100%" }}>
+          <AppDiv
+            style={{
+              marginLeft: {
+                lg: 10,
+                xs: 0,
+              },
+              width: "100%",
+            }}
+          >
             <AppLabel>Address</AppLabel>
             <AppInput placeholder="Address" fullWidth margin="normal" />
-          </div>
+          </AppDiv>
         </AppDiv>
       </AppDiv>
     </div>

@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 import Checkbox from "@mui/material/Checkbox";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormGroup from "@mui/material/FormGroup";
@@ -6,11 +7,26 @@ import AppPaper from "../../../components/atoms/paper";
 import EventsCard from "../../../components/molecules/EventsCard";
 import Calendar from "../../../components/molecules/Calender";
 import EventModal from "../../../components/molecules/EventModal";
+import { useState } from "react";
+import { useSelector } from "react-redux";
+import { Appheading } from "../../../app-theme";
 
 const CalenderTab = () => {
+  const [title, setTitle] = useState();
+  const [description, setDescription] = useState();
+  const [currentDate, setcurrentDate] = useState();
+  const date = useSelector((state) => state?.itemsSlice?.items);
+
   return (
     <>
-      <EventModal />
+      <EventModal
+        setDescription={setDescription}
+        setTitle={setTitle}
+        setcurrentDate={setcurrentDate}
+        currentDate={currentDate}
+        description={description}
+        title={title}
+      />
       <Grid container spacing={2}>
         <Grid xs={12} lg={8}>
           <AppPaper
@@ -20,7 +36,7 @@ const CalenderTab = () => {
             }}
           >
             <FormGroup sx={{ display: "flex" }}>
-              <Grid container spacing={2} justifyContent={'center'}>
+              <Grid container spacing={2} justifyContent={"center"}>
                 <Grid md={3}>
                   <FormControlLabel control={<Checkbox color="warning" />} label="All" />
                 </Grid>
@@ -35,12 +51,20 @@ const CalenderTab = () => {
                 </Grid>
               </Grid>
             </FormGroup>
-
-            <EventsCard />
+            {date.length > 0 ? (
+              <>
+                {date &&
+                  date?.map((items, index) => {
+                    return <EventsCard {...items} key={index} id={index} />;
+                  })}
+              </>
+            ) : (
+              <Appheading sx={{ mt: 3 }}>Lets add a new event no events added</Appheading>
+            )}
           </AppPaper>
         </Grid>
         <Grid xs={12} lg={4}>
-          <Calendar />
+          <Calendar setcurrentDate={setcurrentDate} />
         </Grid>
       </Grid>
     </>

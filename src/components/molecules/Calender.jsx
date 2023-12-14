@@ -4,15 +4,12 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { StaticDatePicker } from "@mui/x-date-pickers/StaticDatePicker";
 
 // eslint-disable-next-line react/prop-types
-const Calendar = ({ show = true }) => {
+const Calendar = ({ setcurrentDate, show = true }) => {
   const [value, setValue] = useState(new Date());
 
   const handleDateChange = (newValue) => {
-    // Display an alert with the selected date
-    // alert(`Selected date: ${newValue.toDateString()}`);
-
-    // Update the state with the new selected date
     setValue(newValue);
+    setcurrentDate(newValue.toDateString());
   };
 
   return (
@@ -56,6 +53,10 @@ const Calendar = ({ show = true }) => {
           value={value}
           disableFuture
           onChange={handleDateChange}
+          sx={{
+            width: "100%",
+            height: "400px",
+          }}
         />
       </LocalizationProvider>
     </>

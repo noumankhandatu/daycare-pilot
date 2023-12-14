@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import AppPaper from "./../atoms/paper";
 import { AppMainheading } from "../../app-theme";
 import { Appfont } from "./../../app-theme/index";
@@ -7,8 +8,14 @@ import EditIcon from "@mui/icons-material/Edit";
 import AppIcons from "../atoms/Icon";
 import AppDiv from "../atoms/appDiv";
 import { primary } from "../../app-theme/colors";
+import { useDispatch } from "react-redux";
+import { removeItem } from "../../redux/slice/calenderSlice";
 
-const EventsCard = () => {
+const EventsCard = ({ title, description, currentDate, id }) => {
+  const dispatch = useDispatch();
+  const handleDeleteClick = () => {
+    dispatch(removeItem(id));
+  };
   return (
     <div>
       <AppPaper
@@ -27,12 +34,13 @@ const EventsCard = () => {
       >
         <div>
           <AppMainheading sx={{ fontSize: "21.47px", color: "#0EAD69", fontWeight: 500 }}>
-            Closure - Stat History
+            {title ? title : "Please select a title"} -{" "}
+            {description ? description : "Please select a description"}
           </AppMainheading>
           <AppDiv sx={{ display: "flex" }}>
             <CalendarMonthIcon sx={{ color: "#0EAD69" }} />
             <Appfont sx={{ fontSize: "15px", color: "#272755", fontWeight: 600, ml: 1 }}>
-              SUN, 05 October 2023
+              {currentDate ? currentDate : "Please select a date"}
             </Appfont>
           </AppDiv>
         </div>
@@ -53,13 +61,14 @@ const EventsCard = () => {
           <AppIcons
             platform="twitter"
             icon={<DeleteIcon sx={{ ...IconColors, backgroundColor: "red" }} />}
+            onClick={handleDeleteClick}
           />
         </AppDiv>
       </AppPaper>
       <AppDiv
         sx={{
           height: "16px",
-          background: "#0EAD69",
+          background: id === 1 || id === 3 ? "#004080" : "#0EAD69",
           borderBottomRightRadius: "30px",
           borderBottomLeftRadius: "30px",
         }}

@@ -15,7 +15,7 @@ import { ProfileElementTypes } from "../type";
 import MyRefer from "./ProfileTabs/myRefer";
 import MyChildern from "./ProfileTabs/myChildern";
 const ProfileTab = () => {
-  const [selectedText, setSelectedText] = useState("");
+  const [selectedText, setSelectedText] = useState(ProfileElementTypes.PROFILE);
 
   const profileItems = [
     {

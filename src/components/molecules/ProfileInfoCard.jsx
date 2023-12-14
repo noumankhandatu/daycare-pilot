@@ -7,7 +7,6 @@ import { primary } from "../../app-theme/colors";
 import ListItemText from "@mui/material/ListItemText";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
 import Divider from "@mui/material/Divider";
 
 const ListItemContainer = styled(ListItemButton)(({ theme, selectedText }) => ({
@@ -38,13 +37,11 @@ const ProfileInfoCard = ({ title, Icon, index, selectedText, setSelectedText }) 
             justifyContent: "center",
           }}
         >
-          <ListItemIcon sx={{ minWidth: "30px" }}>
             <AppIcons
               platform="arrow"
               icon={Icon}
               sx={selectedText === text ? { color: "'white'" } : { color: alpha }}
             />
-          </ListItemIcon>
           <ListItemText
             disableTypography
             sx={{ opacity: open ? 1 : 0 }}

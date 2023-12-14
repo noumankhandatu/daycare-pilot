@@ -77,9 +77,7 @@ const ChatLayout = () => {
           sx={{
             display: "flex",
             alignItems: "center",
-            position: "absolute",
-            bottom: 20,
-            width: "95%",
+            width: "100%",
           }}
         >
           <CameraAltIcon />
@@ -88,7 +86,6 @@ const ChatLayout = () => {
           <AppInput
             sx={{
               width: {
-                md: "100%",
                 xs: "100%",
               },
               borderRadius: 3,
@@ -139,6 +136,7 @@ const mainDiv = {
     md: 40,
     xs: 0,
   },
+  width: "100%",
 };
 
 const avatarStyle = {

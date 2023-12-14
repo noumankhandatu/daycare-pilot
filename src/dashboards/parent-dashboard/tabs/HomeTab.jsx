@@ -46,7 +46,7 @@ const HomeTab = () => {
                 <Appfont sx={{ color: "black" }}>Edith Johnson</Appfont>
               </AppDiv>
             </AppDiv>
-            <Appcaption sx={{ mb: 1.5, mt: 2 }}>
+            <Appcaption sx={{ mb: 1.5, mt: 2, color: "black" }}>
               @emma Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
               incididunt ut labore et dolore.
             </Appcaption>
@@ -71,7 +71,7 @@ const HomeTab = () => {
               sx={{
                 width: 106,
                 height: 106,
-                borderRadius: 4,
+                borderRadius: 9,
                 boxShadow: "0 0 12.507644653320312px 0px rgba(0, 64, 128, 0.1)",
               }}
             />

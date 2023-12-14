@@ -1,15 +1,14 @@
-import  { useState } from "react";
+import { useState } from "react";
 import noMessageImg from "../../../assets/tab-images/no-message.png";
 import AppImage from "../../../components/atoms/Image";
 import ChatLayout from "./ChatLayout";
 
 const MessageTab = () => {
+  // eslint-disable-next-line no-unused-vars
   const [smsData, setSmsData] = useState(true); // Replace with your actual SMS data
 
-  // Function to render the appropriate content based on the presence of SMS data
   const renderContent = () => {
     if (!smsData) {
-      // No SMS data, show the centered image
       return (
         <div
           style={{

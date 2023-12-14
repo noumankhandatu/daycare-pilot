@@ -9,7 +9,15 @@ const MyProfile = () => {
   return (
     <div>
       <AppDiv sx={{ display: "flex", alignItems: "stretch", flexDirection: "column" }}>
-        <AppDiv sx={{ display: "flex", justifyContent: "center" }}>
+        <AppDiv
+          sx={{
+            display: {
+              lg: "flex",
+              xs: "block",
+            },
+            justifyContent: "center",
+          }}
+        >
           <Avatar
             src={"https://mui.com/static/images/avatar/1.jpg"}
             sx={{
@@ -20,32 +28,86 @@ const MyProfile = () => {
             }}
           />
         </AppDiv>
-        <AppDiv sx={{ display: "flex", justifyContent: "space-between", mt: 2, mb: 1 }}>
+        <AppDiv
+          sx={{
+            display: {
+              lg: "flex",
+              xs: "block",
+            },
+            justifyContent: "space-between",
+            mt: 2,
+            mb: 1,
+          }}
+        >
           <div style={{ width: "100%" }}>
             <AppLabel>Full Name</AppLabel>
             <AppInput placeholder="Enter your Title" fullWidth margin="normal" />
           </div>
-          <div style={{ marginLeft: 10, width: "100%" }}>
+          <AppDiv
+            style={{
+              marginLeft: {
+                lg: 10,
+                xs: 0,
+              },
+              width: "100%",
+            }}
+          >
             <AppLabel>Password</AppLabel>
             <AppInput placeholder="Enter your Password" type="password" fullWidth margin="normal" />
-          </div>
+          </AppDiv>
         </AppDiv>
-        <AppDiv sx={{ display: "flex", justifyContent: "space-between", mt: 2, mb: 1 }}>
+        <AppDiv
+          sx={{
+            display: {
+              lg: "flex",
+              xs: "block",
+            },
+            justifyContent: "space-between",
+            mt: 2,
+            mb: 1,
+          }}
+        >
           <div style={{ width: "100%" }}>
             <AppLabel> Email</AppLabel>
             <AppInput placeholder="Enter your Email" fullWidth margin="normal" />
           </div>
-          <div style={{ marginLeft: 10, width: "100%" }}>
+          <AppDiv
+            style={{
+              marginLeft: {
+                lg: 10,
+                xs: 0,
+              },
+              width: "100%",
+            }}
+          >
             <AppLabel>Work Location</AppLabel>
             <AppInput placeholder="Enter your Work Location" fullWidth margin="normal" />
-          </div>
+          </AppDiv>
         </AppDiv>
-        <AppDiv sx={{ display: "flex", justifyContent: "space-between", mt: 2, mb: 1 }}>
+        <AppDiv
+          sx={{
+            display: {
+              lg: "flex",
+              xs: "block",
+            },
+            justifyContent: "space-between",
+            mt: 2,
+            mb: 1,
+          }}
+        >
           <div style={{ width: "100%" }}>
             <AppLabel>Contact #</AppLabel>
             <AppInput placeholder="Enter your Contact #" fullWidth margin="normal" />
           </div>
-          <div style={{ marginLeft: 10, width: "100%" }}>
+          <AppDiv
+            style={{
+              marginLeft: {
+                lg: 10,
+                xs: 0,
+              },
+              width: "100%",
+            }}
+          >
             <AppButton
               variant="contained"
               color="warning"
@@ -54,7 +116,7 @@ const MyProfile = () => {
             >
               Save
             </AppButton>
-          </div>
+          </AppDiv>
         </AppDiv>
       </AppDiv>
     </div>

@@ -40,6 +40,10 @@ import AnnouncementsTab from "./tabs/Announcements ";
 import ProfileTab from "./tabs/ProfileTab";
 import AppIcons from "../../components/atoms/Icon";
 import ReportTab from "./tabs/ReportTab";
+import AppPaper from "../../components/atoms/paper";
+import noNotifcation from "../../assets/images/no-notifcation.png";
+import { ClickAwayListener } from "@mui/base/ClickAwayListener";
+
 const drawerWidth = 200;
 
 const openedMixin = (theme) => ({
@@ -125,7 +129,7 @@ export default function ParentDashboard() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(true);
   const [selectedItem, setSelectedItem] = React.useState(DrawerElementTypes.HOME);
-
+  const [showNotifcation, setShowNotification] = React.useState(false);
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -158,7 +162,17 @@ export default function ParentDashboard() {
         return <Typography>404 No Tab Found</Typography>;
     }
   };
-  //
+  const handleMessage = () => {
+    setSelectedItem(DrawerElementTypes.MESSAGE);
+  };
+  const handleNotification = () => {
+    setShowNotification((prev) => !prev);
+  };
+
+  const handleClickAwayEvent = () => {
+    setShowNotification(false);
+  };
+
   return (
     <AppDiv sx={{ display: "flex" }}>
       <CssBaseline />
@@ -178,7 +192,6 @@ export default function ParentDashboard() {
             onClick={handleDrawerOpen}
             edge="start"
             sx={{
-              marginRight: 5,
               ...(open && { display: "none" }),
             }}
           >
@@ -214,63 +227,81 @@ export default function ParentDashboard() {
               ),
             }}
           />
-          <Stack spacing={2} direction="row" sx={{ ml: 1, mr: 1 }}>
-            <Badge badgeContent={4} color="warning">
+          <Stack spacing={2} direction="row" sx={{ ml: 1, mr: 1, position: "relative" }}>
+            <Badge badgeContent={4} color="warning" onClick={handleMessage}>
               <EmailIcon color="action" />
             </Badge>
+            {showNotifcation && (
+              <ClickAwayListener onClickAway={handleClickAwayEvent}>
+                <AppDiv sx={{ position: "absolute", right: 0, top: 30 }}>
+                  <AppPaper
+                    sx={{ width: "300px", height: 450, display: "flex", alignItems: "center" }}
+                  >
+                    <AppImage src={noNotifcation} sx={{ height: "200px", width: "280px" }} />
+                  </AppPaper>
+                </AppDiv>
+              </ClickAwayListener>
+            )}
             <Badge badgeContent={99} color="warning">
-              <NotificationsNoneIcon color="action" />
+              <NotificationsNoneIcon color="action" onClick={handleNotification} />
             </Badge>
           </Stack>
           <ProfileMenu />
         </Toolbar>
       </AppBar>
-      <Drawer variant="permanent" open={open}>
-        <DrawerHeader sx={{ display: "flex", justifyContent: "center", pt: 2, pb: 3 }}>
-          {theme.direction === "rtl" ? (
-            ` <ChevronRightIcon />`
-          ) : (
-            <AppImage
-              onClick={handleDrawerClose}
-              src={logo}
-              alt="Logo"
-              sx={{
-                width: open ? "150px" : "70px",
-              }}
-            />
-          )}
-        </DrawerHeader>
-        <List>
-          {DrawerElements?.map((items, index) => {
-            const text = items.title;
-            const Icon = items.Icon;
-            return (
-              <ListItem key={index} sx={{ display: "block" }} onClick={() => handleItemClick(text)}>
-                <ListItemContainer
-                  isSelected={selectedItem === text}
-                  sx={{
-                    mr: open ? 3 : "auto",
-                    justifyContent: "center",
-                  }}
+      {open && (
+        <Drawer variant="permanent" open={open}>
+          <DrawerHeader sx={{ display: "flex", justifyContent: "center", pt: 2, pb: 3 }}>
+            {theme.direction === "rtl" ? (
+              ` <ChevronRightIcon />`
+            ) : (
+              <AppImage
+                onClick={handleDrawerClose}
+                src={logo}
+                alt="Logo"
+                sx={{
+                  width: open ? "150px" : "70px",
+                }}
+              />
+            )}
+          </DrawerHeader>
+          <List>
+            {DrawerElements?.map((items, index) => {
+              const text = items.title;
+              const Icon = items.Icon;
+              return (
+                <ListItem
+                  key={index}
+                  sx={{ display: "block" }}
+                  onClick={() => handleItemClick(text)}
                 >
-                  <ListItemIcon sx={{ minWidth: "30px" }}>
-                    <AppIcons
-                      platform="arrow"
-                      icon={Icon}
-                      sx={selectedItem === text ? { color: "white" } : { color: alpha }}
+                  <ListItemContainer
+                    isSelected={selectedItem === text}
+                    sx={{
+                      mr: open ? 3 : "auto",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <ListItemIcon sx={{ minWidth: "30px" }}>
+                      <AppIcons
+                        platform="arrow"
+                        icon={Icon}
+                        sx={selectedItem === text ? { color: "white" } : { color: alpha }}
+                      />
+                    </ListItemIcon>
+                    <ListItemText
+                      disableTypography
+                      sx={{ opacity: open ? 1 : 0 }}
+                      primary={<Appfont sx={{ fontSize: 14, fontWeight: 600 }}>{text}</Appfont>}
                     />
-                  </ListItemIcon>
-                  <ListItemText
-                    disableTypography
-                    sx={{ opacity: open ? 1 : 0 }}
-                    primary={<Appfont sx={{ fontSize: 14, fontWeight: 600 }}>{text}</Appfont>}
-                  />
-                </ListItemContainer>
-              </ListItem>
-            );
-          })}
-        </List>
-      </Drawer>
+                  </ListItemContainer>
+                </ListItem>
+              );
+            })}
+          </List>
+        </Drawer>
+      )}
+
       <AppDiv sx={sty}>
         <DrawerHeader />
         {renderContent()}

@@ -19,7 +19,15 @@ const MyChildern = () => {
         </AppButton>
       </AppDiv>
       <AppDiv
-        sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 2 }}
+        sx={{
+          display: {
+            lg: "flex",
+            xs: "block",
+          },
+          alignItems: "center",
+          justifyContent: "space-between",
+          gap: 2,
+        }}
       >
         <AppPaper sx={{ display: "flex", alignItems: "start", p: 1, mt: 1, mb: 1 }}>
           <Avatar
