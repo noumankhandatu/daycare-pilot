@@ -261,6 +261,7 @@ export default function ParentDashboard() {
                 alt="Logo"
                 sx={{
                   width: open ? "150px" : "70px",
+                  height: open ? "110px" : "70px",
                 }}
               />
             )}
