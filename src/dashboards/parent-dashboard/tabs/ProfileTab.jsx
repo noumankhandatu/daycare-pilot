@@ -14,6 +14,7 @@ import MySetting from "./ProfileTabs/mySetting";
 import { ProfileElementTypes } from "../type";
 import MyRefer from "./ProfileTabs/myRefer";
 import MyChildern from "./ProfileTabs/myChildern";
+import { AppMainheading } from "../../../app-theme";
 const ProfileTab = () => {
   const [selectedText, setSelectedText] = useState(ProfileElementTypes.PROFILE);
 
@@ -56,7 +57,7 @@ const ProfileTab = () => {
         return <MyRefer />;
 
       default:
-        return <>404 No Tab Found</>;
+        return <AppMainheading>This tab is not present in figma and coming soon</AppMainheading>;
     }
   };
   return (

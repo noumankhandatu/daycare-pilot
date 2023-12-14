@@ -2,14 +2,14 @@ import Login from "../pages/Login";
 import { ROUTE_PATH } from "../utils/enums";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AppLayout from "../components/wrapper/AppLayout";
-import ForgetPassword from "./../pages/ForgetPassword";
-import RecoveryPassword from "./../pages/RecoveryPassword";
-import LoginSuccessfull from "./../pages/LoginSuccessfull";
-import KidInformation from "./../pages/KidInformation";
-import GuardianInformation from './../pages/GuardianInfo';
-import ParentDashboard from './../dashboards/parent-dashboard/index';
+import ForgetPassword from "../pages/ForgetPassword";
+import RecoveryPassword from "../pages/RecoveryPassword";
+import LoginSuccessfull from "../pages/LoginSuccessfull";
+import KidInformation from "../pages/KidInformation";
+import GuardianInformation from "../pages/GuardianInfo";
+import ParentDashboard from "../dashboards/parent-dashboard/index";
 
-const PublicRoutes = () => {
+const TeacherRoutes = () => {
   return (
     <Router>
       <Routes>
@@ -77,4 +77,4 @@ const PublicRoutes = () => {
   );
 };
 
-export default PublicRoutes;
+export default TeacherRoutes;

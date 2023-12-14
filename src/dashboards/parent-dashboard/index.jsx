@@ -7,7 +7,6 @@ import MuiAppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
 import CssBaseline from "@mui/material/CssBaseline";
-import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import ListItem from "@mui/material/ListItem";
@@ -159,7 +158,7 @@ export default function ParentDashboard() {
       case DrawerElementTypes.PROFILE:
         return <ProfileTab />;
       default:
-        return <Typography>404 No Tab Found</Typography>;
+        return <AppMainheading>This tab is not present in figma and coming soon</AppMainheading>;
     }
   };
   const handleMessage = () => {
