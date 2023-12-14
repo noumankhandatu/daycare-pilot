@@ -235,9 +235,28 @@ export default function ParentDashboard() {
               <ClickAwayListener onClickAway={handleClickAwayEvent}>
                 <AppDiv sx={{ position: "absolute", right: 0, top: 30 }}>
                   <AppPaper
-                    sx={{ width: "300px", height: 450, display: "flex", alignItems: "center" }}
+                    sx={{
+                      width: {
+                        lg: "300px",
+                        xs: "200px",
+                      },
+                      height: {
+                        lg: 450,
+                        xs: 300,
+                      },
+                      display: "flex",
+                      alignItems: "center",
+                    }}
                   >
-                    <AppImage src={noNotifcation} sx={{ height: "200px", width: "280px" }} />
+                    <AppImage
+                      src={noNotifcation}
+                      sx={{
+                        height: {
+                          lg: "200px",
+                          xs: "130px",
+                        },
+                      }}
+                    />
                   </AppPaper>
                 </AppDiv>
               </ClickAwayListener>
